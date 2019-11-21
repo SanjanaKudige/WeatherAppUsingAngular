@@ -1,0 +1,62 @@
+<div class="navbar">
+  <ul>
+    <li><a>City Base Weather Forecast</a></li>
+  </ul>
+</div>
+<form (submit)="onSubmit(input.value, $event)">
+  <div class="searchWithButtons">
+    <input #input id="inputId" #input class="searchBar" />
+    <button class="searchBtn" id="searchId">
+      SEARCH
+    </button>
+    <select class="dropdown">
+      <option value="farenheit">Farenheit</option>
+      <option value="celcius">Celcius</option>
+    </select>
+  </div>
+</form>
+    
+
+
+
+
+<div>
+  <button id="myBtn" class="button button3">CREATE ALERT</button>
+  <button class="button button3" disabled>REMOVE ALERT</button>
+</div>
+<!-- The Modal -->
+<div class="cityTitle"></div>
+<div id="errorMessages" class="errorClass"></div>
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div>
+      <h2>Set Weather Alert:</h2>
+    </div>
+    <div>
+      <p>
+        Please enter a MAX temp to be alerted at. Current format is
+        <b>Imperial</b>
+      </p>
+    </div>
+    <div>
+        <input type="text" id="changeTemperature" placeholder="Enter Temperature"/>
+    </div>
+    <div>
+      <button class="myCancel" id="cancelBtn">
+        CANCEL
+      </button>
+      <button class="myAlert" id="alertBtn">
+        SET ALERT
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper" id="allCards"></div>
+
+
+<div *ngFor="let c of cards">
+  <app-card></app-card>
+</div>
